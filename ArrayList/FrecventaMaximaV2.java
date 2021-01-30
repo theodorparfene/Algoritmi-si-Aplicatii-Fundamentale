@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class FrecventaMaximaV2 {
-    private static void showMinMax(String str){
+    private static void showMax(String str){
         str = str.toLowerCase();
         str = str.replaceAll("\\s+", "");
         int maxFreq = 0;
@@ -12,13 +12,11 @@ public class FrecventaMaximaV2 {
             strList.add(ch);
         }
 
-
         for (int i = 0; i < strList.size(); i++) {
             int chFreq = Collections.frequency(strList, strList.get(i));
             if (i > 0 && chFreq > maxFreq) {
                 listResult.clear();
             }
-            System.out.println(listResult);
             if (chFreq >= maxFreq) {
                 maxFreq = chFreq;
                 if (!listResult.contains(strList.get(i))) {
@@ -33,6 +31,6 @@ public class FrecventaMaximaV2 {
     }
 
     public static void main(String[] args) {
-        showMinMax("3 sud est e fara rest");
+        showMax("3 sud est e fara rest");
     }
 }
